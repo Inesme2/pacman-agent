@@ -37,7 +37,6 @@ class ReflexCaptureAgent(CaptureAgent):
 
     # Decides on the best action from the possible legal actions
     def choose_action(self, game_state):
-        print("Choosing action REFLEX")
         # Get all legal actions for the agent
         actions = game_state.get_legal_actions(self.index)
         # Evaluate the worth of each action
@@ -48,7 +47,6 @@ class ReflexCaptureAgent(CaptureAgent):
         best_actions = [a for a, v in zip(actions, values) if v == max_value]
         # Check if there is only a small amount of food left, which may trigger special behavior
         food_left = len(self.get_food(game_state).as_list())
-        print(f"Food left: {food_left}, total food: {self.initialFoodCount}")
         if food_left <= self.initialFoodCount*0.7:
             # If there are less than 2 foods left, prioritize going home
             best_action = self.go_home(game_state, actions)
@@ -162,7 +160,6 @@ class OffensiveReflexAgent(ReflexCaptureAgent):
             self.lastPositions.pop(0)
 
         food_left = len(self.get_food(game_state).as_list())
-        print(f"Food left: {food_left}, total food: {self.initialFoodCount}")
         if food_left <= self.initialFoodCount*0.6:
             # If there are less than 2 foods left, prioritize going home
             best_action = self.go_home(game_state, actions)
