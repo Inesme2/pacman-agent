@@ -1,11 +1,6 @@
 # Authors: Iker Benito (u217895), Inés Montoya (u235592)
 # This project forms part of the Berkley Pacman "Capture the Flag" contest.
 
-# COMMENTS:
-# The only thing that must be improved is that one the Pacman eats a
-# capsule, and improve the offensive strategy by implementing a 
-# Minimax algorithm.
-
 # Import the required libraries
 import random
 import util
